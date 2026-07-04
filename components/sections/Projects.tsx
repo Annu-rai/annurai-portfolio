@@ -2,15 +2,10 @@ import Image from "next/image";
 import { IconArrowUpRight, IconBrandGithub } from "@tabler/icons-react";
 import SectionTitle from "@/components/common/SectionTitle";
 import Reveal from "@/components/ui/Reveal";
-import { PROJECTS, type Project } from "@/data/projects";
+import { PROJECTS, CLIENT_SITES, type Project } from "@/data/projects";
 
 function initials(title: string) {
-  return title
-    .split(" ")
-    .map((w) => w[0])
-    .join("")
-    .slice(0, 3)
-    .toUpperCase();
+  return title.replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase();
 }
 
 function Thumbnail({ project }: { project: Project }) {
@@ -39,7 +34,11 @@ export default function Projects() {
   return (
     <section id="projects" className="mb-24 scroll-mt-16 lg:mb-36 lg:scroll-mt-24">
       <SectionTitle title="Projects" />
+
       <Reveal>
+        <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-500">
+          Featured SaaS Platforms
+        </h3>
         <ol className="group/list flex flex-col gap-3">
           {PROJECTS.map((project) => (
             <li
@@ -53,14 +52,13 @@ export default function Projects() {
               </div>
 
               <div className="z-10 sm:col-span-6">
-                <h3 className="font-medium leading-snug text-slate-200">
+                <h4 className="font-medium leading-snug text-slate-200">
                   <a
                     href={project.liveUrl ?? "#"}
                     target="_blank"
                     rel="noreferrer"
                     className="group/link inline-flex items-baseline gap-1 transition-colors hover:text-teal-300 focus-visible:text-teal-300"
                   >
-                    {/* Stretched link makes the whole card clickable */}
                     <span className="absolute -inset-x-4 -inset-y-4 hidden lg:block" />
                     <span>{project.title}</span>
                     <IconArrowUpRight
@@ -68,18 +66,30 @@ export default function Projects() {
                       className="shrink-0 translate-y-px transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 motion-reduce:transition-none"
                     />
                   </a>
-                </h3>
+                </h4>
+                <p className="text-xs font-medium uppercase tracking-wide text-teal-300/80">
+                  {project.subtitle}
+                </p>
 
                 <p className="mt-2 text-sm leading-normal text-slate-400">
                   {project.description}
                 </p>
+
+                <ul className="mt-3 space-y-1.5">
+                  {project.contributions.map((c) => (
+                    <li key={c} className="flex gap-2 text-sm text-slate-400">
+                      <span className="mt-px shrink-0 text-teal-300">▹</span>
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
 
                 {project.repoUrl && (
                   <a
                     href={project.repoUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="relative z-20 mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 transition-colors hover:text-teal-300"
+                    className="relative z-20 mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 transition-colors hover:text-teal-300"
                   >
                     <IconBrandGithub size={15} /> Source
                   </a>
@@ -99,6 +109,37 @@ export default function Projects() {
             </li>
           ))}
         </ol>
+      </Reveal>
+
+      <Reveal delay={0.1}>
+        <h3 className="mb-4 mt-14 text-xs font-semibold uppercase tracking-widest text-slate-500">
+          Client Work · {CLIENT_SITES.length}+ Live Sites
+        </h3>
+        <ul className="divide-y divide-slate-800/70 overflow-hidden rounded-lg border border-slate-800">
+          {CLIENT_SITES.map((site) => (
+            <li key={site.url}>
+              <a
+                href={site.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between gap-4 px-4 py-3 transition-colors hover:bg-slate-800/40"
+              >
+                <span className="min-w-0 truncate text-sm font-medium text-slate-300 transition-colors group-hover:text-teal-300">
+                  {site.name}
+                </span>
+                <span className="flex shrink-0 items-center gap-3">
+                  <span className="hidden text-xs text-slate-500 sm:inline">
+                    {site.platform}
+                  </span>
+                  <IconArrowUpRight
+                    size={15}
+                    className="text-slate-500 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-teal-300 motion-reduce:transition-none"
+                  />
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </Reveal>
     </section>
   );

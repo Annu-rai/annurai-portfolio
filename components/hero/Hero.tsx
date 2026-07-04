@@ -16,13 +16,13 @@ export default function Hero() {
         <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
           <TypeAnimation
             sequence={[
-              "Frontend Engineer",
+              "Senior Frontend Engineer",
               2000,
-              "SaaS Builder",
+              "SaaS Dashboard Architect",
               2000,
-              "React Developer",
+              "Multi-Tenant Systems Builder",
               2000,
-              "AI App Developer",
+              "Performance-Obsessed Developer",
               2000,
             ]}
             wrapper="span"

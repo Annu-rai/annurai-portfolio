@@ -1,12 +1,12 @@
 import SectionTitle from "@/components/common/SectionTitle";
 import Reveal from "@/components/ui/Reveal";
 import CountUp from "@/components/ui/CountUp";
-import { SITE } from "@/lib/constants";
+import { SITE, FOCUS_AREAS } from "@/lib/constants";
 
 const STATS = [
-  { to: 20, suffix: "+", label: "Websites Shipped" },
-  { to: 5, suffix: "", label: "SaaS Projects" },
-  { to: 3, suffix: "+", label: "Years Experience" },
+  { to: 20, suffix: "+", label: "Production Sites" },
+  { to: 3, suffix: "", label: "SaaS Platforms" },
+  { to: 3, suffix: "", label: "Countries Served" },
 ];
 
 export default function About() {
@@ -17,20 +17,38 @@ export default function About() {
         <div className="space-y-4 leading-relaxed text-slate-400">
           <p>{SITE.intro}</p>
           <p>
-            These days I focus on building{" "}
+            I&apos;ve delivered{" "}
             <span className="font-medium text-slate-200">
-              AI-powered SaaS products
+              20+ production websites
             </span>{" "}
-            — designing interfaces that stay fast, accessible, and genuinely
-            enjoyable to use. I&apos;ve worked with clients across the{" "}
+            and architected{" "}
+            <span className="font-medium text-slate-200">
+              multi-tenant SaaS dashboards
+            </span>{" "}
+            for clients across the{" "}
             <span className="font-medium text-teal-300">US</span>,{" "}
             <span className="font-medium text-teal-300">Australia</span>, and{" "}
-            <span className="font-medium text-teal-300">Canada</span>.
+            <span className="font-medium text-teal-300">Canada</span> — with a
+            focus on RBAC, performance, and clean, scalable architecture.
           </p>
-          <p>
-            When I&apos;m not shipping, I&apos;m exploring new tools, refining
-            design systems, and chasing that last millisecond of performance.
-          </p>
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.1}>
+        <div className="mt-8">
+          <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-500">
+            Focus Areas
+          </h3>
+          <ul className="flex flex-wrap gap-2">
+            {FOCUS_AREAS.map((area) => (
+              <li
+                key={area}
+                className="rounded-full border border-teal-300/20 bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300"
+              >
+                {area}
+              </li>
+            ))}
+          </ul>
         </div>
       </Reveal>
 

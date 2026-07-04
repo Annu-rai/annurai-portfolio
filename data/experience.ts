@@ -7,29 +7,22 @@ export type Experience = {
   tech: string[];
 };
 
+// NOTE: date ranges below are placeholders — update them to your real timeline.
 export const EXPERIENCES: Experience[] = [
   {
-    period: "2024 — Present",
+    period: "2023 — Present",
+    role: "Senior Frontend Engineer",
+    company: "SaaS Platforms — IMONET · TRADEDEQ · MarketinQ",
+    description:
+      "Architect and build multi-tenant SaaS dashboards with role-based access control, real-time KPI analytics, and secure authentication. Own the frontend architecture end to end and optimize rendering with SSR / SSG / ISR.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "REST APIs"],
+  },
+  {
+    period: "2021 — 2023",
     role: "Frontend Engineer",
-    company: "Freelance / Contract",
+    company: "International Client Websites — US · AU · CA",
     description:
-      "Build AI-powered SaaS dashboards for clients across the US, Australia, and Canada. Ship accessible, high-performance React interfaces and design systems that scale from MVP to production.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "React Query", "OpenAI API"],
-  },
-  {
-    period: "2022 — 2024",
-    role: "Frontend Developer",
-    company: "Agency Projects",
-    description:
-      "Delivered 20+ responsive marketing sites and web apps. Partnered with designers to translate Figma into pixel-accurate, animated interfaces and improved Lighthouse scores across the board.",
-    tech: ["React", "Next.js", "Framer Motion", "Sanity", "Vercel"],
-  },
-  {
-    period: "2021 — 2022",
-    role: "Junior Web Developer",
-    company: "Early Career",
-    description:
-      "Started building for the web — HTML, CSS, and JavaScript fundamentals, then React. Learned to ship, get feedback, and iterate quickly on real client work.",
-    tech: ["JavaScript", "React", "CSS", "Git"],
+      "Delivered 20+ production websites across real estate, healthcare, construction, and e-commerce. Focused on Core Web Vitals, SEO, and responsive UI systems, with WooCommerce & Shopify integrations.",
+    tech: ["WordPress", "Webflow", "Shopify", "JavaScript", "SEO"],
   },
 ];
