@@ -1,6 +1,7 @@
 "use client";
 
 import { TypeAnimation } from "react-type-animation";
+import { IconFileText } from "@tabler/icons-react";
 import Navbar from "@/components/layout/Navbar";
 import { SITE } from "@/lib/constants";
 import { SOCIALS } from "@/data/social";
@@ -36,6 +37,19 @@ export default function Hero() {
         <p className="mt-4 max-w-xs leading-normal text-slate-400">
           {SITE.tagline}
         </p>
+
+        <a
+          href={SITE.resumeUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="group mt-6 inline-flex items-center gap-2 rounded-full border border-teal-300/40 bg-teal-300/10 px-6 py-2.5 text-sm font-medium text-teal-300 transition-all hover:-translate-y-0.5 hover:bg-teal-300/20 motion-reduce:hover:translate-y-0"
+        >
+          <IconFileText
+            size={18}
+            className="transition-transform group-hover:-rotate-6"
+          />
+          Resume
+        </a>
 
         <Navbar />
       </div>
