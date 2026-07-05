@@ -37,6 +37,7 @@ export const PROJECTS: Project[] = [
       "Created a scalable component architecture",
     ],
     tech: ["Next.js", "React", "TypeScript", "Context API"],
+    image: "/projects/tradedeq.png",
     liveUrl: "https://app.tradedeq.com/app",
   },
   {

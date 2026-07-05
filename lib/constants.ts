@@ -7,7 +7,7 @@ export const SITE = {
   intro:
     "I design and build scalable SaaS platforms, analytics dashboards, and high-performance frontend systems using modern frameworks and optimized rendering strategies.",
   resumeUrl: "/resume.pdf",
-  email: "said.moridi@gmail.com",
+  email: "annuece92@gmail.com",
 } as const;
 
 export const FOCUS_AREAS = [
