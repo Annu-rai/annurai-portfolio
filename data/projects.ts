@@ -57,6 +57,35 @@ export const PROJECTS: Project[] = [
   },
 ];
 
+export type OngoingProject = {
+  name: string;
+  description: string;
+  stack: string;
+  url: string;
+};
+
+/** Projects currently in active development. */
+export const ONGOING_PROJECTS: OngoingProject[] = [
+  {
+    name: "Eshkon",
+    description: "SaaS platform in active development.",
+    stack: "Next.js / TypeScript",
+    url: "https://eshkon-eta.vercel.app/",
+  },
+  {
+    name: "Assessment Manager",
+    description: "Assessment management dashboard with reporting.",
+    stack: "Next.js / Vercel",
+    url: "https://assessment-manager-five.vercel.app/",
+  },
+  {
+    name: "MarketOracle",
+    description: "Market intelligence & analytics frontend.",
+    stack: "Next.js / React",
+    url: "https://marketoracle-frontend.vercel.app/",
+  },
+];
+
 export type ClientSite = {
   name: string;
   platform: string;

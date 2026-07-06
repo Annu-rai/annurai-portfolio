@@ -2,7 +2,7 @@ import Image from "next/image";
 import { IconArrowUpRight, IconBrandGithub } from "@tabler/icons-react";
 import SectionTitle from "@/components/common/SectionTitle";
 import Reveal from "@/components/ui/Reveal";
-import { PROJECTS, CLIENT_SITES, type Project } from "@/data/projects";
+import { PROJECTS, ONGOING_PROJECTS, CLIENT_SITES, type Project } from "@/data/projects";
 
 function initials(title: string) {
   return title.replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase();
@@ -112,6 +112,42 @@ export default function Projects() {
       </Reveal>
 
       <Reveal delay={0.1}>
+        <h3 className="mb-4 mt-14 text-xs font-semibold uppercase tracking-widest text-slate-500">
+          Ongoing Projects
+        </h3>
+        <ul className="grid gap-3 sm:grid-cols-2">
+          {ONGOING_PROJECTS.map((project) => (
+            <li key={project.url}>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex h-full flex-col rounded-lg border border-slate-800 p-4 transition-colors hover:border-teal-300/40 hover:bg-slate-800/40"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="flex items-center gap-2">
+                    <span className="text-sm font-medium text-slate-200 transition-colors group-hover:text-teal-300">
+                      {project.name}
+                    </span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-amber-300">
+                      <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
+                      In Progress
+                    </span>
+                  </span>
+                  <IconArrowUpRight
+                    size={15}
+                    className="shrink-0 text-slate-500 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-teal-300 motion-reduce:transition-none"
+                  />
+                </div>
+                <p className="mt-2 text-sm leading-normal text-slate-400">
+                  {project.description}
+                </p>
+                <p className="mt-3 text-xs text-slate-500">{project.stack}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+
         <h3 className="mb-4 mt-14 text-xs font-semibold uppercase tracking-widest text-slate-500">
           Client Work · {CLIENT_SITES.length}+ Live Sites
         </h3>

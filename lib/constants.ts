@@ -6,7 +6,7 @@ export const SITE = {
     "I design and build scalable SaaS platforms, analytics dashboards, and high-performance frontend systems.",
   intro:
     "I design and build scalable SaaS platforms, analytics dashboards, and high-performance frontend systems using modern frameworks and optimized rendering strategies.",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/Annu_Kumari_update.pdf",
   email: "annuece92@gmail.com",
 } as const;
 
