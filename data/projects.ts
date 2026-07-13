@@ -55,6 +55,21 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://app.marketinq.io/",
     repoUrl: "https://github.com/Annu-rai",
   },
+  {
+    title: "NOSTDS",
+    subtitle: "Healthcare Verification Platform",
+    description:
+      "Confidential STD testing & verification directory connecting users to testing centres and labs.",
+    contributions: [
+      "Conducted a full black-box technical audit — SEO, performance, accessibility & security",
+      "Flagged missing HTTP security headers on health-sensitive data and delivered a next.config.js fix",
+      "Diagnosed a duplicate page-title bug and scoped JSON-LD structured data for local/health search",
+      "Delivered a prioritized (P0–P2) fix list with Jira/Linear-ready tickets",
+    ],
+    tech: ["Next.js", "App Router", "nginx", "Security Headers"],
+    image: "/projects/nostds.png",
+    liveUrl: "https://nostds.com/",
+  },
 ];
 
 export type OngoingProject = {
